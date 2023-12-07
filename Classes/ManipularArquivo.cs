@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace TrabalhoPraticoAED.Classes
 {
-
     public class ManipularArquivo
     {
-
-        public static void LerArquivo(string caminho, List<Curso> cursos, List<Candidato> candidatos, Dictionary<int, String> DicionarioCursos)
+        public static void LerArquivo(string caminho, List<Curso> cursos, List<Candidato> candidatos, Dictionary<int, Curso> DicionarioCursos)
         {
             try
             {
@@ -21,8 +19,8 @@ namespace TrabalhoPraticoAED.Classes
                 for (int i = 0; i < qtdCursos; i++)
                 {
                     string[] dadosCurso = arquivo.ReadLine().Split(';');
-                    DicionarioCursos.Add(int.Parse(dadosCurso[0]), dadosCurso[1]);
                     Curso curso = new Curso(dadosCurso[1], int.Parse(dadosCurso[2]));
+                    DicionarioCursos.Add(int.Parse(dadosCurso[0]), curso);
                     cursos.Add(curso);
                 }
 
@@ -31,7 +29,7 @@ namespace TrabalhoPraticoAED.Classes
                 {
                     string[] dadosCandidato = arquivo.ReadLine().Split(';');
                     Candidato candidato = new Candidato(dadosCandidato[0], double.Parse(dadosCandidato[1]), double.Parse(dadosCandidato[2]),
-                                                    double.Parse(dadosCandidato[3]), int.Parse(dadosCandidato[4]), int.Parse(dadosCandidato[5]));
+                                          double.Parse(dadosCandidato[3]), int.Parse(dadosCandidato[4]), int.Parse(dadosCandidato[5]));
                     candidatos.Add(candidato);
                 }
             }

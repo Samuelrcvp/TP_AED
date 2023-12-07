@@ -21,8 +21,7 @@ namespace TrabalhoPraticoAED.Classes
         }
         public Candidato Remover()
         {
-            if (primeiro == ultimo)
-                throw new Exception("Pilha vazia");
+            if (primeiro == ultimo) throw new Exception("Filha vazia");
             Celula tmp = primeiro;
             primeiro = primeiro.Prox;
             Candidato candidato = primeiro.Candidato;
@@ -30,5 +29,16 @@ namespace TrabalhoPraticoAED.Classes
             tmp = null;
             return candidato;
         }
+
+        public Boolean VerificaFilaCheia(int maximo)
+        {
+            Boolean cheia = false;
+            int tamanho = 0;
+            for (Celula i = primeiro.Prox; i != null; i = i.Prox) tamanho++;
+            if(tamanho >= maximo) { cheia = true; }
+            return cheia;
+        }
+
+        public Candidato UltimoCandidato() { return ultimo.Candidato; }
     }
 }

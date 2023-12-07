@@ -13,53 +13,35 @@ namespace TrabalhoPraticoAED.Classes
         {
             List<Candidato> candidatos = new List<Candidato>();
             List<Curso> cursos = new List<Curso>();
-            Dictionary<int, String> dicionarioCursos = new Dictionary<int, String>();
+            Dictionary<int, Curso> dicionarioCursos = new Dictionary<int, Curso>();
 
             ManipularArquivo.LerArquivo(@"..\..\..\ArquivoDeTexto\Arquivo.txt", cursos, candidatos, dicionarioCursos);
             Ordenação.QuicksortDecresc(candidatos, 0, candidatos.Count - 1);
 
-            SelecionarAprovados(candidatos, cursos, dicionarioCursos);
-
-
-
+            SelecionarAprovados(candidatos, dicionarioCursos);
+            CalcularNotaCorte(cursos);
 
             Console.ReadKey();
         }
 
-        static void MostraNoConsole(List<Curso> cursos)
+        static void SelecionarAprovados(List<Candidato> candidatos, Dictionary<int, Curso> dicionarioCursos)
         {
-            foreach (var curso in cursos)
-            {
-                Console.WriteLine("\n*-CURSO-*");
-                // Console.WriteLine($"\nCod: {curso.Codigo}, Nome: {curso.Nome}, Vagas: {curso.QtdVagas}, Nota corte: {curso.NotaCorte}");
-                Console.WriteLine("\nSelecionados:");
-                /* foreach (Candidato candidatoSelecionado in curso.CandidatosSelecionados)
-                 {
-                     Console.WriteLine($"\nNome: {candidatoSelecionado.Nome}, Media :{candidatoSelecionado.NotaMedia}");
-                 }
-                 Console.WriteLine("0--------------------------------------------------------------------0");
-                 Console.WriteLine("\nFila de Espera:");
-                 foreach (Candidato candidatoNaFila in curso.FilaEspera)
-                 {
-                     Console.WriteLine($"\nNome: {candidatoNaFila.Nome}, Media :{candidatoNaFila.NotaMedia}");
-                 }*/
+            Curso curso = new Curso();
 
-                Console.WriteLine("  ");
+            foreach (Candidato candidato in candidatos)
+            {
+                curso = dicionarioCursos[candidato.CodOpcao1];
+                if (!curso.InserirCandidato(candidato))
+                {
+                    curso = dicionarioCursos[candidato.CodOpcao2];
+                    curso.InserirCandidato(candidato);
+                }
             }
         }
 
-        static void SelecionarAprovados(List<Candidato> candidatos, List<Curso> cursos, Dictionary<int, String> dicionarioCursos)
+        private static void CalcularNotaCorte(List<Curso> cursos)
         {
-
-
-
-
-
-
-
-
-
-
+            foreach(Curso curso in cursos) { curso.CalcularNotaCorte(); }
         }
     }
 }
