@@ -3,45 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrabAED.Classes;
 using TrabalhoPraticoAED.Classes;
 
 namespace TrabalhoPraticoAED.Classes
 {
     public class App
     {
+        private static List<Candidato> candidatos;
+        private static List<Curso> cursos;
+        private static Dictionary<int, Curso> dicionarioCursos;
+
+        public App()
+        {
+            candidatos = new List<Candidato>();
+            cursos = new List<Curso>();
+            dicionarioCursos = new Dictionary<int, Curso>();
+        }
+
+        public static List<Candidato> Candidatos { get => candidatos; set => candidatos = value; }
+        public static List<Curso> Cursos { get => cursos; set => cursos = value; }
+        public static Dictionary<int, Curso> DicionarioCursos { get => dicionarioCursos; set => dicionarioCursos = value; }
+
         static void Main(string[] args)
         {
-            List<Candidato> candidatos = new List<Candidato>();
-            List<Curso> cursos = new List<Curso>();
-            Dictionary<int, Curso> dicionarioCursos = new Dictionary<int, Curso>();
+            App app = new App();
+            ManipularArquivo manipularArquivo = new ManipularArquivo();
+            ManipularCandidatos manipularCandidatos = new ManipularCandidatos();
+            
+            manipularArquivo.LerArquivo(@"..\..\..\ArquivoDeTexto\Arquivo.txt");
+            manipularArquivo.OrdenarListaGeral();
 
-            ManipularArquivo.LerArquivo(@"..\..\..\ArquivoDeTexto\Arquivo.txt", cursos, candidatos, dicionarioCursos);
-            Ordenação.QuicksortDecresc(candidatos, 0, candidatos.Count - 1);
-
-            SelecionarAprovados(candidatos, dicionarioCursos);
-            CalcularNotaCorte(cursos);
+            manipularCandidatos.SelecionarAprovados();
+            manipularCandidatos.CalcularNotaCorte();
+                      
+            CriarArquivoSaida();
 
             Console.ReadKey();
         }
 
-        static void SelecionarAprovados(List<Candidato> candidatos, Dictionary<int, Curso> dicionarioCursos)
+        private static void CriarArquivoSaida()
         {
-            Curso curso = new Curso();
+            string arquivoSaida = (@"..\..\..\ArquivoDeTexto\saida.txt");
 
-            foreach (Candidato candidato in candidatos)
+            try
             {
-                curso = dicionarioCursos[candidato.CodOpcao1];
-                if (!curso.InserirCandidato(candidato))
-                {
-                    curso = dicionarioCursos[candidato.CodOpcao2];
-                    curso.InserirCandidato(candidato);
-                }
-            }
-        }
+                StreamWriter arqEscrita = new StreamWriter(arquivoSaida, false, Encoding.UTF8);
 
-        private static void CalcularNotaCorte(List<Curso> cursos)
-        {
-            foreach(Curso curso in cursos) { curso.CalcularNotaCorte(); }
+                foreach (Curso curso in cursos)
+                {
+                    arqEscrita.WriteLine($"{curso.Nome} {curso.NotaCorte}");
+                    arqEscrita.WriteLine($"Selecionados {curso.CandidatosSelecionados.Mostrar()} ");
+                    arqEscrita.WriteLine($"Fila de Espera {curso.FilaEspera.Mostrar()}\n");
+                }
+                
+                arqEscrita.Close();
+            }
+            catch (Exception erro)
+            {
+                Console.WriteLine($"Ocorreu um erro ao escrever arquivo de texto saída: {erro.Message}");
+                throw;
+            }
         }
     }
 }

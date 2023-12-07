@@ -3,3 +3,13 @@ C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\
 C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.AssemblyInfoInputs.cache
 C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.AssemblyInfo.cs
 C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\bin\Debug\net7.0\TrabAED.exe
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\bin\Debug\net7.0\TrabAED.deps.json
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\bin\Debug\net7.0\TrabAED.runtimeconfig.json
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\bin\Debug\net7.0\TrabAED.dll
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\bin\Debug\net7.0\TrabAED.pdb
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.dll
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\refint\TrabAED.dll
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.pdb
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\TrabAED.genruntimeconfig.cache
+C:\Users\user\Documents\Projetos Puc\AED - Ana Paula\TrabalhoPraticoAED\TrabAED\obj\Debug\net7.0\ref\TrabAED.dll

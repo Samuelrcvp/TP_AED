@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TrabalhoPraticoAED.Classes
 {
-    internal class Fila
+    public class Fila
     {
         private Celula primeiro, ultimo;
         public Fila()
         {
-            primeiro = new Celula(); //nó cabeça
+            primeiro = new Celula();
             ultimo = primeiro;
         }
         public void Inserir(Candidato candidato)
@@ -40,5 +40,15 @@ namespace TrabalhoPraticoAED.Classes
         }
 
         public Candidato UltimoCandidato() { return ultimo.Candidato; }
+
+        public string Mostrar()
+        {      
+            StringBuilder stringCandidatos = new StringBuilder();
+            for (Celula i = primeiro.Prox; i != null; i = i.Prox)
+            {
+                stringCandidatos.Append ($"\n{i.Candidato.Nome} {i.Candidato.NotaMedia.ToString("F2")}");
+            }
+            return stringCandidatos.ToString();
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace TrabalhoPraticoAED.Classes
 {
     public class Candidato
     {
-        /*  Atributos  */
         private string nome;
         private double notaRedacao;
         private double notaMatematica;
@@ -16,8 +15,6 @@ namespace TrabalhoPraticoAED.Classes
         private double notaMedia;
         private int codOpcao1;
         private int codOpcao2;
-
-        /*  Propriedades  */
 
         public string Nome
         {
@@ -48,8 +45,6 @@ namespace TrabalhoPraticoAED.Classes
             get { return codOpcao2; }
         }
 
-        /*  Construtor  */
-
         public Candidato(string nome, double notaRedacao, double notaMatematica, double notaLinguagens,
                          int codOpcao1, int codOpcao2)
         {
@@ -62,15 +57,5 @@ namespace TrabalhoPraticoAED.Classes
             notaMedia = Math.Round((notaMatematica + notaLinguagens + notaRedacao) / 3, 2);
         }
 
-        public override string ToString()
-        {
-            return $"Nome: {nome}\n" +
-                   $"Nota Redação: {notaRedacao}\n" +
-                   $"Nota Matemática: {notaMatematica}\n" +
-                   $"Nota Linguagens: {notaLinguagens}\n" +
-                   $"Nota Média: {notaMedia}\n" +
-                   $"Código Curso primeira Opção: {codOpcao1}\n" +
-                   $"Código Curso segunda Opção: {codOpcao2}";
-        }
     }
 }

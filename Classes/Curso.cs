@@ -15,17 +15,15 @@ namespace TrabalhoPraticoAED.Classes
         private Fila candidatosSelecionados;
         private Fila filaEspera;
 
-        public string Nome { get { return nome; } set { nome = value; } }
-        public int QtdVagas
-        {
-            get { return qtdVagas; }
-            set { qtdVagas = value; }
-        }
-        public double NotaCorte
-        {
-            get { return notaCorte; }
-            set { notaCorte = value; }
-        }
+        public string Nome { get => nome;  set => nome = value; }
+
+        public int QtdVagas{ get => qtdVagas;  set => qtdVagas = value; }
+
+        public double NotaCorte{ get => notaCorte; set => notaCorte = value; }
+
+        public Fila CandidatosSelecionados { get => candidatosSelecionados; }
+
+        public Fila FilaEspera { get => filaEspera; }
 
         public Curso(String nome, int qtdVagas)
         {
@@ -43,9 +41,9 @@ namespace TrabalhoPraticoAED.Classes
             this.filaEspera = new Fila();
         }
 
-        public Boolean InserirCandidato(Candidato candidato)
+        public bool InserirCandidato(Candidato candidato)
         {
-            Boolean aprovado;
+            bool aprovado;
             if (!candidatosSelecionados.VerificaFilaCheia(QtdVagas))
             {
                 candidatosSelecionados.Inserir(candidato);
@@ -59,28 +57,8 @@ namespace TrabalhoPraticoAED.Classes
             return aprovado;
         }
 
+
         public void CalcularNotaCorte() { NotaCorte = candidatosSelecionados.UltimoCandidato().NotaMedia; }
 
-
-
-        /*
-                public override string ToString()
-                {
-                    string result = $"{_nome} {_mediaCurso:F2}\nSelecionados\n";
-
-                    foreach (var candidato in _candidatosSelecionados)
-                    {
-                        result += $"{candidato.Nome} {candidato.NotaMedia:F2}\n";
-                    }
-
-                    result += "Fila de Espera\n";
-
-                    foreach (var candidato in FilaEspera)
-                    {
-                        result += $"{candidato.Nome} {candidato.NotaMedia:F2}\n";
-                    }
-
-                    return result;
-                }*/
     }
 }

@@ -13,9 +13,7 @@ José Ribeiro Nunes da Silva;600;0;0;1;2
 Beatriz Silveira;1100;0;0;3;2
 Francisco Almeida Alves;900;0;0;4;3
 Carlos Costa;1000;0;0;3;4
-Patrícia Pereira 1;1400;100;0;3;4
-Patrícia Pereira 2;1300;200;0;3;4
-Patrícia Pereira 3;1350;150;0;3;4
+Patrícia Pereira;1400;0;0;3;4
 Antônio Roberto da Silva;1200;0;0;4;2
 Izabela Soares Silva;1600;0;0;5;3
 Gustavo Couto Ribeiro;1500;0;0;5;4
@@ -24,4 +22,4 @@ José Roberto Silveira;800;0;0;6;2
 Marcelo Rodrigues Leal;700;0;0;6;7
 Rogério Azevedo Costa;1300;0;0;7;6
 Maria João;200;0;0;1;2
-Amanda Silva;100;0;0;4;5
+Amanda Silva;100;0;0;4;
