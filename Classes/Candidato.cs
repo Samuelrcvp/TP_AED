@@ -56,6 +56,5 @@ namespace TrabalhoPraticoAED.Classes
             this.codOpcao2 = codOpcao2;
             notaMedia = (notaMatematica + notaLinguagens + notaRedacao) / 3 ;
         }
-
     }
 }
