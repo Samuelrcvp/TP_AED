@@ -52,9 +52,9 @@ namespace TrabalhoPraticoAED.Classes
 
                 foreach (Curso curso in cursos)
                 {
-                    arqEscrita.WriteLine($"{curso.Nome} {curso.NotaCorte}");
-                    arqEscrita.WriteLine($"Selecionados {curso.CandidatosSelecionados.Mostrar()} ");
-                    arqEscrita.WriteLine($"Fila de Espera {curso.FilaEspera.Mostrar()}\n");
+                    arqEscrita.WriteLine($"{curso.Nome} {curso.NotaCorte.ToString("F2")}");
+                    arqEscrita.WriteLine($"Selecionados{curso.CandidatosSelecionados.Mostrar()}");
+                    arqEscrita.WriteLine($"Fila de Espera{curso.FilaEspera.Mostrar()}\n");
                 }
                 
                 arqEscrita.Close();

@@ -54,7 +54,7 @@ namespace TrabalhoPraticoAED.Classes
             this.notaLinguagens = notaLinguagens;
             this.codOpcao1 = codOpcao1;
             this.codOpcao2 = codOpcao2;
-            notaMedia = Math.Round((notaMatematica + notaLinguagens + notaRedacao) / 3, 2);
+            notaMedia = (notaMatematica + notaLinguagens + notaRedacao) / 3 ;
         }
 
     }
