@@ -22,4 +22,4 @@ José Roberto Silveira;800;0;0;6;2
 Marcelo Rodrigues Leal;700;0;0;6;7
 Rogério Azevedo Costa;1300;0;0;7;6
 Maria João;200;0;0;1;2
-Amanda Silva;100;0;0;4;
+Amanda Silva;100;0;0;4;5
